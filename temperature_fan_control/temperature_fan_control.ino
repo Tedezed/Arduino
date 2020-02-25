@@ -1,6 +1,9 @@
 #include <Arduino.h>
 #include <math.h>
 
+// Source temp: https://www.geekfactory.mx/tutoriales/tutoriales-arduino/termistor-ntc-con-arduino-como-sensor-de-temperatura/
+// Source Motor: https://naylampmechatronics.com/blog/11_Tutorial-de-Uso-del-M%C3%B3dulo-L298N.html
+
 // configurar el pin utilizado para la medicion de voltaje del divisor resistivo del NTC
 #define CONFIG_THERMISTOR_ADC_PIN A0
 // configurar el valor de la resistencia que va en serie con el termistor NTC en ohms
