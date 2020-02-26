@@ -70,6 +70,11 @@ void MotorStop()
   analogWrite(PinIN3, 0);
 }
 
+void delayMillis(int period) {
+  int time_now = millis();
+  while(millis() < time_now + period){}
+}
+
 void setup()
 {
   // preparar serial
@@ -96,13 +101,37 @@ void loop()
   Serial.print(resistencia);
   Serial.print(" Temperatura: ");
   Serial.println(temperatura, 1);
-
-  // esperar 5 segundos entre las lecturas
-  delay(500);
-  if (temperatura > 30.0) {
+  
+  if (temperatura > 35.0) {
     MotorAntihorario(255);
+    delay(400);
+    MotorStop();
+    delayMicroseconds(800);
+  }
+  else if (temperatura > 38.0) {
+    MotorAntihorario(255);
+    delay(1200);
+    MotorStop();
+    delayMicroseconds(800);
+  }
+  else if (temperatura > 40.0) {
+    MotorAntihorario(255);
+    delay(1800);
+    MotorStop();
+    delayMicroseconds(800);
+  }
+  else if (temperatura > 42.0) {
+    MotorAntihorario(255);
+    delay(2800);
+    MotorStop();
+    delayMicroseconds(800);
+  }
+  else if (temperatura > 44.0) {
+    MotorAntihorario(255);
+    delay(3800);
   }
   else {
     MotorStop();
+    delay(5000);
   }
 }
